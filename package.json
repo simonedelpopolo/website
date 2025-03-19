@@ -1,0 +1,43 @@
+{
+  "name": "@simonedelpopolo/website",
+  "version": "1.0.0",
+  "description": "my personal website",
+  "type": "module",
+  "scripts": {
+    "publish": "./publish.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "email": "simonedelpopolo@outlook.com",
+    "name": "Simone Del Popolo",
+    "url": "https://simonedelpopolo.com"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@nutsloop/ivy-server": "^1.0.0-alpha.24"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.10.10",
+    "dotenv": "^16.4.7",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "nutsloop",
+    "simonedelpopolo"
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/simonedelpopolo"
+    }
+  ],
+  "homepage": "https://github.com/simonedelpopolo/website#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonedelpopolo/website.git"
+  }
+}
