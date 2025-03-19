@@ -100,12 +100,10 @@ function deployToServer() {
   console.log( '🚀 Deploying to remote server...' )
 
   const scpProcess = spawn( 'scp', [
-    '-i', SSH_KEY_PATH, // ✅ Fix: Separate "-i" and SSH_KEY_PATH
-    '-r', DEST_DIR, // ✅ Fix: No space between "-r" and DEST_DIR
+    '-i', SSH_KEY_PATH,
+    '-r', DEST_DIR,
     `${ REMOTE_USER }@${ REMOTE_HOST }:${ REMOTE_PATH }`
-  ], {
-    stdio: 'inherit'
-  } )
+  ], { stdio: 'inherit' })
 
   scpProcess.on( 'close', ( code ) => {
     if ( code === 0 ) {
