@@ -44,21 +44,21 @@ body {
 
 /* Link Styling */
 a {
-    color: #b085f5; /* Matches the purple theme */
+    color: rgb(0, 255, 0);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #9575cd; /* Softer purple for hover state */
+    color: rgb(0, 255, 0);
 }
 
 a:active {
-    color: #9575cd;
+    color: rgb(0, 255, 0);
 }
 
 a:visited {
-    color: #b085f5;
+    color: rgb(0, 255, 0);
 }
 
 /* Section Spacing */
@@ -88,6 +88,7 @@ code {
     background-color: #222;
     padding: 2px 4px;
     border-radius: 4px;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
 header.header {
@@ -140,6 +141,10 @@ h1 {
 p {
     font-size: 1.2em;
     margin: 10px 0;
+    border-bottom: 1px solid rgb(63, 63, 63, 0.5);
+    border-top: 1px solid rgb(63, 63, 63, 0.5);
+    border-radius: 5px;
+    padding: 3px;
 }
 
 header nav ul {
@@ -163,12 +168,12 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #00bcd4;
+    color: rgb(0, 255, 0, 0.75);
 }
 
 /* Style for the active link */
 header nav ul li a.active {
-    color: #00bcd4; /* Persistent highlight */
+    color: rgb(0, 255, 0, 0.75); /* Persistent highlight */
     border-bottom: 1px solid #a5edf3; /* Optional underline */
 }
 
@@ -181,18 +186,25 @@ main {
 }
 
 main.move {
-    margin-top: 120px;
+    margin-top: 115px;
 }
 
 /* blockquotes and stuff */
+span.enhance-text{
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+span.quote-style-border{
+    border-left: 5px solid #00FF00;
+    margin: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
 span.gpt{
-    font-family: "JetBrains Mono Light" , monospace;
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: #002200;
-    padding: 0 5px;
-    border-radius: 5px;
-    color: #00FF00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
 div.gpt{
@@ -222,8 +234,7 @@ div.full-width {
 pre.gpt {
     display: block;
     font-family: 'Intel One Mono Light', monospace;
-    text-align: left;
-    padding: 30px 30px 15px 15px;
+    padding: 15px 15px 0 0;
     border: 1px solid rgba(115, 255, 0, 100);
     background-color: #002200;
     font-size: 1em;
@@ -233,6 +244,11 @@ pre.gpt {
     white-space: pre-wrap;  /* Ensures long lines wrap instead of overflowing */
     word-wrap: break-word;
     width: 90%;
+}
+
+pre.gpt span{
+    color: #00FF00;
+    font-weight: bold;
 }
 
 div.gpt_column_left{
@@ -250,4 +266,26 @@ div.gpt_column_right{
         border-right: none;
         grid-column: span 2;
     }
+}
+
+/* up arrow animation */
+a.up-arrow {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0, 255, 0);
+    animation: bounce 1.5s infinite;
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Hover effect */
+a:hover {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    transform: translateY(-5px);
 }
