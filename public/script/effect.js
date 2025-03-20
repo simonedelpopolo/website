@@ -51,6 +51,17 @@
     }
   }
 
+  function shuffle_head(){
+    const head_element = document.getElementById("shuffle_head");
+
+    // Split into array, shuffle, and rejoin
+    // Set shuffled text back
+    head_element.innerText = head_element.innerText
+      .split( " | " )
+      .sort( () => Math.random() - 0.5 ) // Shuffle algorithm
+      .join( " | " );
+  }
+
   // Add event listeners to handle active state on click
   links.forEach(link => {
     link.addEventListener('click', () => {
@@ -64,7 +75,7 @@
 
   // Call setActiveLink on page load
   window.addEventListener('load', setActiveLink);
-
+  window.addEventListener('load', shuffle_head);
   // Optional: Handle hash changes dynamically (if navigating without reloading)
   window.addEventListener('hashchange', setActiveLink);
 })();
