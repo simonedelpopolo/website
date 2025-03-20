@@ -96,16 +96,16 @@ header.header {
     color: #fff;
     text-align: center;
     background-color: #1a1a1a;
-    transition: all 0.3s ease; /* Smooth shrinking animation */
+    transition: all 0.8s ease; /* Smooth shrinking animation */
     border-bottom: 1px solid #3f3f3f;
 }
 
 header.header.padding_regular {
-    padding: 70px 0;
+    padding: 50px 0;
 }
 
 header.header.padding_small {
-    padding: 5px 0;
+    padding: 3px 0;
 }
 
 header.header.position_fixed {
@@ -186,7 +186,7 @@ main {
 }
 
 main.move {
-    margin-top: 115px;
+    margin-top: 190px;
 }
 
 /* blockquotes and stuff */

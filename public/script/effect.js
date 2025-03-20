@@ -6,7 +6,7 @@
 
   // Add a scroll event listener to the window
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 100) {
       header.classList.remove('position_relative');
       header.classList.add('position_fixed');
       header.classList.add('shrink');
