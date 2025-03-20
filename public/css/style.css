@@ -289,3 +289,22 @@ a:hover {
     text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
     transform: translateY(-5px);
 }
+
+/* Blinking cursor */
+span.cursor::after {
+    font-size: 0.85em;
+    content: "▇"; /* The blinking character */
+/*    font-weight: bold;*/
+/*    color: #00ff00;*/
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    animation: blink 1.5s infinite;
+    display: inline-block;
+    position: relative;
+    top: -0.18em;
+    left: 0.15em;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.05; }
+}
