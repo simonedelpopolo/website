@@ -275,13 +275,13 @@ a.up-arrow {
     font-size: 1rem;
     font-weight: bold;
     color: rgb(0, 255, 0);
-    animation: bounce 1.5s infinite;
+    animation: bounce 2.5s infinite;
     transition: text-shadow 0.3s ease-in-out, transform 0.3s;
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-3px); }
 }
 
 /* Hover effect */
