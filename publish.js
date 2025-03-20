@@ -11,7 +11,7 @@ dotenv.config()
 const __filename = fileURLToPath( import.meta.url )
 const __dirname = path.dirname( __filename )
 
-const FILE_PATH = path.join( __dirname, process.env.FILE_PATH )
+const FILE_PATH = process.env.FILE_PATH.split( ',' )
 const LIVE_RELOAD_FILE = process.env.LIVE_RELOAD_FILE
 const SOURCE_DIR = path.join( __dirname, process.env.SOURCE_DIR )
 const DEST_DIR = path.join( __dirname, process.env.DEST_DIR )
@@ -22,23 +22,27 @@ const SSH_KEY_PATH = process.env.SSH_KEY_PATH
 const EXCLUDED_FILES = process.env.EXCLUDED_FILES.split( ',' )
 
 async function removeScriptTag() {
-  try {
-    let data = await readFile( FILE_PATH, 'utf8' )
-    const dom = new JSDOM( data )
-    const document = dom.window.document
 
-    document.querySelectorAll( 'script' ).forEach( ( script ) => {
-      if ( script.src.includes( LIVE_RELOAD_FILE ) ) {
-        script.remove()
-        console.log( `🔥 Removed <script src="${ script.src }">` )
-      }
-    } )
+  FILE_PATH.forEach( async ( file ) => {
+    try {
+      let data = await readFile( file, 'utf8' )
+      const dom = new JSDOM( data )
+      const document = dom.window.document
 
-    await writeFile( FILE_PATH, dom.serialize(), 'utf8' )
-    console.log( '✅ Updated index.html successfully!' )
-  } catch ( error ) {
-    console.error( 'Error:', error )
-  }
+      document.querySelectorAll( 'script' ).forEach( ( script ) => {
+        if ( script.src.includes( LIVE_RELOAD_FILE ) ) {
+          script.remove()
+          console.log( `🔥 Removed <script src="${ script.src }">` )
+        }
+      } )
+
+      await writeFile( file, dom.serialize(), 'utf8' )
+      console.log( `✅ Updated ${file} successfully!` )
+    } catch ( error ) {
+      console.error( 'Error:', error )
+    }
+  })
+
 }
 
 /**
