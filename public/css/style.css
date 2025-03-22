@@ -21,11 +21,11 @@ body {
     font-family: 'Intel One Mono Light', monospace;
     font-size: 14px; /* Base font size */
     line-height: 1.4; /* Better readability */
-    color: #f5f5f5; /* Soft, easy-on-the-eyes text color */
+    color: rgb(245, 245, 245); /* Soft, easy-on-the-eyes text color */
 
     /* Background */
     background-color: rgb(26, 26, 26); /* Dark background for a modern look */
-    background-image: linear-gradient(135deg, rgb(30, 30, 30), rgb(39, 55, 23,0.2)); /* Subtle gradient */
+    background-image: linear-gradient(135deg, rgb(30, 30, 30), rgb(39, 55, 23, 0.2)); /* Subtle gradient */
     background-attachment: fixed; /* Keeps the background in place when scrolling */
     background-size: cover; /* Makes the background responsive */
 
@@ -71,11 +71,11 @@ section {
 pre.nutsloop {
     font-family: 'JetBrains Mono Light', monospace;
     font-size: 0.9em;
-    background-color: #313131;
-    color: #ff0a50;
+    background-color: rgb(49, 49, 49);
+    color: rgb(255, 10, 80);
     padding: 1px;
     border-radius: 4px;
-    border: 1px dotted #ff0a50;
+    border: 1px dotted rgb(255, 10, 80);
     overflow-x: auto;
     white-space: pre-wrap;
     width: 120pt;
@@ -85,19 +85,19 @@ pre.nutsloop {
 code {
     font-family: 'JetBrains Mono Light', monospace;
     font-size: 1em;
-    background-color: #222;
+    background-color: rgb(34, 34, 34);
     padding: 2px 4px;
     border-radius: 4px;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    text-shadow: 0 0 10px rgb(0, 255, 0), 0 0 20px rgb(0, 255, 0);
 }
 
 header.header {
     font-family: 'Intel One Mono Light', monospace;
-    color: #fff;
+    color: rgb(255, 255, 255);
     text-align: center;
-    background-color: #1a1a1a;
+    background-color: rgb(26, 26, 26);
     transition: all 0.8s ease; /* Smooth shrinking animation */
-    border-bottom: 1px solid #3f3f3f;
+    border-bottom: 1px solid rgb(63, 63, 63);
 }
 
 header.header.padding_regular {
@@ -152,7 +152,7 @@ header nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 header nav ul li {
@@ -160,7 +160,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
@@ -174,7 +174,7 @@ header nav ul li a:hover {
 /* Style for the active link */
 header nav ul li a.active {
     color: rgb(0, 255, 0, 0.75); /* Persistent highlight */
-    border-bottom: 1px solid #a5edf3; /* Optional underline */
+    border-bottom: 1px solid rgb(165, 237, 243); /* Optional underline */
 }
 
 main {
@@ -190,12 +190,12 @@ main.move {
 }
 
 /* blockquotes and stuff */
-span.enhance-text{
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+span.enhance-text {
+    text-shadow: 0 0 10px rgb(0, 255, 0), 0 0 20px rgb(0, 255, 0);
 }
 
-span.quote-style-border{
-    border-left: 5px solid #00FF00;
+span.quote-style-border {
+    border-left: 5px solid rgb(0, 255, 0);
     margin: 10px;
     padding-top: 10px;
     padding-left: 10px;
@@ -203,11 +203,11 @@ span.quote-style-border{
     display: inline-block;
 }
 
-span.gpt{
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+span.gpt {
+    text-shadow: 0 0 10px rgb(0, 255, 0), 0 0 20px rgb(0, 255, 0);
 }
 
-div.gpt{
+div.gpt {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -218,12 +218,12 @@ div.gpt{
 }
 
 blockquote.gpt {
-    border-left: 5px solid #00FF00;
+    border-left: 5px solid rgb(0, 255, 0);
     padding: 10px;
     margin: 20px;
     display: inline-block;
     text-align: left;
-    background-color: #002200;
+    background-color: rgb(0, 34, 0);
     font-size: 1.2em;
 }
 
@@ -236,27 +236,27 @@ pre.gpt {
     font-family: 'Intel One Mono Light', monospace;
     padding: 15px 15px 0 0;
     border: 1px solid rgba(115, 255, 0, 100);
-    background-color: #002200;
+    background-color: rgb(0, 34, 0);
     font-size: 1em;
     margin: 20px;
     box-sizing: border-box; /* Ensures padding doesn't mess with width */
     border-radius: 5px;
-    white-space: pre-wrap;  /* Ensures long lines wrap instead of overflowing */
+    white-space: pre-wrap; /* Ensures long lines wrap instead of overflowing */
     word-wrap: break-word;
     width: 90%;
 }
 
-pre.gpt span{
-    color: #00FF00;
+pre.gpt span {
+    color: rgb(0, 255, 0);
     font-weight: bold;
 }
 
-div.gpt_column_left{
+div.gpt_column_left {
     text-align: left;
     border-right: 1px solid rgba(115, 255, 0, 0.4);
 }
 
-div.gpt_column_right{
+div.gpt_column_right {
     text-align: left;
 }
 
@@ -280,13 +280,17 @@ a.up-arrow {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
 /* Hover effect */
 a:hover {
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    text-shadow: 0 0 10px rgb(0, 255, 0), 0 0 20px rgb(0, 255, 0);
     transform: translateY(-5px);
 }
 
@@ -294,9 +298,7 @@ a:hover {
 span.cursor::after {
     font-size: 0.85em;
     content: "▇"; /* The blinking character */
-/*    font-weight: bold;*/
-/*    color: #00ff00;*/
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    text-shadow: 0 0 10px rgb(0, 255, 0), 0 0 20px rgb(0, 255, 0);
     animation: blink 1.5s infinite;
     display: inline-block;
     position: relative;
@@ -305,8 +307,12 @@ span.cursor::after {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.05; }
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.05;
+    }
 }
 
 /* contact grid */
@@ -321,7 +327,7 @@ span.cursor::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #222;
+    background-color: rgb(34, 34, 34);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -335,7 +341,7 @@ span.cursor::after {
 
 .grid-item a {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 1.5em;
     display: flex;
     align-items: center;
@@ -344,4 +350,141 @@ span.cursor::after {
 
 .grid-item i {
     font-size: 2em;
+}
+
+/* footer */
+
+footer.footer {
+    margin-top: 40px;
+    background-color: #111;
+    color: rgb(204, 204, 204);
+    text-align: center;
+    padding: 25px 20px;
+    font-family: "JetBrains Mono Light", monospace;
+    font-size: 0.9em;
+    border-top: 2px solid rgb(0, 255, 136);
+    box-shadow: 0 -4px 20px rgba(0, 255, 136, 0.2);
+}
+
+footer.footer p {
+    margin: 0 0 10px;
+    color: rgb(170, 170, 170);
+    font-size: 1em;
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links li a {
+    color: #00ff88;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00ff88;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+.footer-links li a:hover {
+    color: #fff;
+}
+
+.footer-links li a:hover::after {
+    width: 100%;
+}
+
+/* some text formatting classes */
+span.double_font_size_text {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+span.blood_velvet_text {
+    color: #640000;
+}
+
+/* syntax highlighting */
+code.code-block {
+    font-family: 'Intel One Mono Light', monospace;
+    font-size: 0.9em;
+    background: #111;
+    color: #ddd;
+    padding: 1em;
+    border-radius: 8px;
+    display: block;
+    overflow-x: auto;
+    line-height: 1.5;
+    white-space: pre;
+    text-shadow: 0 0 10px rgba(0, 255, 217, 0.22), 0 0 20px rgba(143, 197, 248, 0.55);
+    overflow-x: auto;
+    overflow-y: hidden; /* optional, keeps it only horizontal */
+}
+
+span.token-const-variable {
+    color: rgb(255, 219, 219);
+}
+
+span.token-keyword {
+    color: rgb(243, 80, 92);
+}
+
+span.token-type {
+    color: rgb(243, 80, 92);
+}
+
+span.token-function {
+    color: rgb(0, 251, 251);
+}
+
+span.token-string {
+    color: rgb(194, 0, 210);
+}
+
+span.token-number {
+    color: rgb(255, 215, 0);
+}
+
+span.token-comment {
+    color: rgb(85, 85, 85);
+    font-style: italic;
+}
+
+span.token-operator {
+    color: rgb(245, 245, 245);
+}
+
+span.token-punctuation {
+    color: rgb(170, 170, 170);
+}
+
+span.token-directive {
+    color: rgb(255, 192, 122);
+}
+
+span.token-namespace {
+    color: rgb(181, 182, 227);
+}
+
+span.token-constant {
+    color: rgb(255, 219, 219);
+}
+
+span.token-class-name {
+    color: rgb(243, 80, 92);
 }
