@@ -4,3 +4,7 @@
 /.env
 /public/socket-address.json
 /production
+/multiDomainConfig.js
+start-http.sh
+start-https.sh
+/public/info
