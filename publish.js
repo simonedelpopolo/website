@@ -19,7 +19,12 @@ const REMOTE_USER = process.env.REMOTE_USER
 const REMOTE_HOST = process.env.REMOTE_HOST
 const REMOTE_PATH = process.env.REMOTE_PATH
 const SSH_KEY_PATH = process.env.SSH_KEY_PATH
-const EXCLUDED_FILES = process.env.EXCLUDED_FILES.split( ',' )
+const EXCLUDED_FILES = process.env.EXCLUDED_FILES.split( ',' );
+// ROOT FILE TARGET
+const ROOT_TARGET = process.env.ROOT_TARGET;
+const MULTI_DOMAIN_CONFIG = process.env.MULTI_DOMAIN_CONFIG;
+const SERVER_HTTP_START_SCRIPT = process.env.SERVER_HTTP_START_SCRIPT;
+const SERVER_HTTPS_START_SCRIPT = process.env.SERVER_HTTPS_START_SCRIPT;
 
 async function removeScriptTag() {
 
@@ -111,9 +116,25 @@ function deployToServer() {
 
   scpProcess.on( 'close', ( code ) => {
     if ( code === 0 ) {
-      console.log( '🎉 Deployment completed successfully!' )
 
-      console.log( '🤡done!' )
+      const scpMultiDomainServerShellScripts = spawn( 'scp', [
+        '-i', SSH_KEY_PATH,
+        MULTI_DOMAIN_CONFIG,
+        SERVER_HTTP_START_SCRIPT,
+        SERVER_HTTPS_START_SCRIPT,
+        `${ REMOTE_USER }@${ REMOTE_HOST }:${ ROOT_TARGET }`
+
+      ], { stdio: 'inherit' })
+
+      scpMultiDomainServerShellScripts.on( 'close', ( code ) => {
+        if ( code === 0 ) {
+          console.log(`ROOT files Deployed Successfully 🤯`)
+          console.log( '🎉 Deployment completed successfully!' )
+          console.log( '🤡done!' )
+        }else {
+          console.error(`❌ ROOT files failed with exit code ${ code }`)
+        }
+      })
     } else {
       console.error( `❌ Deployment failed with exit code ${ code }` )
     }
