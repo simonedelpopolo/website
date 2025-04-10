@@ -25,6 +25,11 @@ const ROOT_TARGET = process.env.ROOT_TARGET;
 const MULTI_DOMAIN_CONFIG = process.env.MULTI_DOMAIN_CONFIG;
 const SERVER_HTTP_START_SCRIPT = process.env.SERVER_HTTP_START_SCRIPT;
 const SERVER_HTTPS_START_SCRIPT = process.env.SERVER_HTTPS_START_SCRIPT;
+const UPGRADE_SCRIPT = process.env.UPGRADE_SCRIPT;
+const CERTS_DIR = process.env.CERTS_DIR;
+const CERTS_SCRIPT = process.env.CERTS_SCRIPT;
+const MANUAL_AUTH_SCRIPT = process.env.MANUAL_AUTH_SCRIPT;
+const MANUAL_CLEANUP_SCRIPT = process.env.MANUAL_CLEANUP_SCRIPT;
 
 async function removeScriptTag() {
 
@@ -119,9 +124,14 @@ function deployToServer() {
 
       const scpMultiDomainServerShellScripts = spawn( 'scp', [
         '-i', SSH_KEY_PATH,
+        '-r', CERTS_DIR,
         MULTI_DOMAIN_CONFIG,
         SERVER_HTTP_START_SCRIPT,
         SERVER_HTTPS_START_SCRIPT,
+        UPGRADE_SCRIPT,
+        CERTS_SCRIPT,
+        MANUAL_AUTH_SCRIPT,
+        MANUAL_CLEANUP_SCRIPT,
         `${ REMOTE_USER }@${ REMOTE_HOST }:${ ROOT_TARGET }`
 
       ], { stdio: 'inherit' })

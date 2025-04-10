@@ -1,10 +1,11 @@
 /.idea
 /node_modules
+/production
+/certs
+/public/info
+/public/ivy-server.nutsloop.com
 /package-lock.json
 /.env
 /public/socket-address.json
-/production
 /multiDomainConfig.js
-start-http.sh
-start-https.sh
-/public/info
+*.sh
