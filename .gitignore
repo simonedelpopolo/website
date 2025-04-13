@@ -9,3 +9,4 @@
 /public/socket-address.json
 /multiDomainConfig.js
 *.sh
+*.service
