@@ -265,6 +265,55 @@ div.gpt_column_right {
   text-align: left;
 }
 
+/* HOME PAGE SECTION GRID */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);;
+  gap: 20px;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+@media (max-width: 430px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.section-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(34, 34, 34);
+  border: 1px solid var(--green-text);
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 2em;
+  color: var(--green-text);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.section-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--green-text);
+}
+
+.section-item i {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.section-item span {
+  font-family: 'JetBrains Mono Light', monospace;
+  font-size: 1em;
+  text-shadow: var(--green-glow);
+}
+
 /* When screen width is less than 900px, force a single column */
 @media (max-width: 900px) {
   div.gpt_column_left, div.gpt_column_right {
@@ -465,7 +514,7 @@ span.token-function {
 }
 
 span.token-string {
-  color: rgb(194, 0, 210);
+  color: rgb(194, 0, 210)
 }
 
 span.token-number {
