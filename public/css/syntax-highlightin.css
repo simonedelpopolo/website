@@ -1,0 +1,69 @@
+/* syntax highlighting */
+code.code-block {
+  font-family: 'Intel One Mono Light', monospace;
+  font-size: 0.9em;
+  background: #111;
+  color: #ddd;
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  overflow-x: auto;
+  line-height: 1.5;
+  white-space: pre;
+  text-shadow: 0 0 10px rgba(0, 255, 217, 0.22), 0 0 20px rgba(143, 197, 248, 0.55);
+  overflow-x: auto;
+  overflow-y: hidden; /* optional, keeps it only horizontal */
+}
+
+span.token-const-variable {
+  color: rgb(255, 219, 219);
+}
+
+span.token-keyword {
+  color: rgb(243, 80, 92);
+}
+
+span.token-type {
+  color: rgb(243, 80, 92);
+}
+
+span.token-function {
+  color: rgb(0, 251, 251);
+}
+
+span.token-string {
+  color: rgb(194, 0, 210)
+}
+
+span.token-number {
+  color: rgb(255, 215, 0);
+}
+
+span.token-comment {
+  color: rgb(85, 85, 85);
+  font-style: italic;
+}
+
+span.token-operator {
+  color: rgb(245, 245, 245);
+}
+
+span.token-punctuation {
+  color: rgb(170, 170, 170);
+}
+
+span.token-directive {
+  color: rgb(255, 192, 122);
+}
+
+span.token-namespace {
+  color: rgb(181, 182, 227);
+}
+
+span.token-constant {
+  color: rgb(255, 219, 219);
+}
+
+span.token-class-name {
+  color: rgb(243, 80, 92);
+}
